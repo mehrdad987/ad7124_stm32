@@ -12,28 +12,6 @@ This repository provides an implementation for interfacing the AD7124 24-bit Σ-
 - Designed for STM32 HAL: compatible with various STM32 MCU series.  
 - Easy integration into STM32CubeIDE or other build environments.  
 
-## Repository Structure
-
-/ (root)
-├── example/ # Example applications / demo code
-│ ├── main.c # Example main loop using AD7124 driver
-│ └── stm32yyxx_it.c # Interrupt handler example (if using DOUT/RDY)
-├── lib/ # Driver library
-│ ├── ad7124.h # Public header(s)
-│ ├── ad7124.c # Driver implementation
-│ └── ad7124_config.c # Configuration / platform-specific settings
-└── README.md # This file
-
-pgsql
-Copy code
-
-## Getting Started
-
-### Prerequisites
-
-- STM32 development environment (e.g. STM32CubeIDE)  
-- A target STM32 board or MCU with SPI and GPIO support  
-- AD7124 connected via SPI, with optional /CS pin and /DOUT (RDY) interrupt pin  
 
 ### Basic Steps
 
@@ -43,13 +21,6 @@ Copy code
 4. **Initialize and configure AD7124** — call initialization/config routines in your setup, set up desired channels, reference, gain, etc.  
 5. **Read data** — trigger conversions and read samples. Use interrupt or polling depending on configuration.  
 
-## Example
-
-See `example/main.c` for a minimal demonstration. The code shows how to initialize the ADC, configure a channel, and read conversion results. You may also adapt the interrupt-driven example in `stm32yyxx_it.c` for DRDY-based sampling.  
-
-## License
-
-This project is released under the **MIT License**.  
 
 ## Acknowledgments & References
 
